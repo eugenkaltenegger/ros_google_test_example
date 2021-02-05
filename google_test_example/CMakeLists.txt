@@ -10,6 +10,7 @@ catkin_package()
 
 include_directories(include
   ${catkin_INCLUDE_DIRS}
+  ./include/
 )
 
 add_library(talker src/talker.cpp)
