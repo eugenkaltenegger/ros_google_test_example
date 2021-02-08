@@ -28,5 +28,5 @@ catkin_add_gtest(google_test_tests
 )
 
 target_link_libraries(google_test_tests talker
-  gmock #This is reqired for the mock
+  gmock
 )

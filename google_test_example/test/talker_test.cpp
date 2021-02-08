@@ -8,7 +8,6 @@ class MockPublisher : public ros::Publisher {
          MOCK_METHOD(void, publish, (std_msgs::String message), ());
 };
 
-// TODO: check naming convention for test suit and test case
 TEST(TalkerTest, verifyPublisherCall) {
     MockPublisher* mockPublisher = new MockPublisher();
     Talker* talker = new Talker(mockPublisher);
