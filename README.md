@@ -1,11 +1,17 @@
 # ROS - Google Tests - Example Package
 
 This is an example package for the usage of Google Tests (`gtest` and `gmock`) with ROS.
-This project aims to show how to integrate `gtest` and `gmock` in a ROS package. The different test methods and mocks are not discussed in detail.
+This project aims to show how to integrate `gtest` and `gmock` in a ROS package (with `catkin`). The different test methods and mocks are not discussed in detail.
 
+The tests can be executed with:
+``` bash
+catkin_make run_tests
+```
+
+## Tests
 The files containing the test cases should be located at `<package_root>/test`.
 
-The main function can create a ROS node as well as a nodehandle (a running roscore is required).
+The test main function can create a ROS node as well as a nodehandle (a running roscore is required).
 Both the node as well as the nodehandle are not required.
 
 ``` c++
@@ -17,8 +23,6 @@ int main(int argc, char **argv){
   return RUN_ALL_TESTS();
 }
 ```
-
-## Tests
 Tests are defined in with macros.
 ``` c++
 TEST(TestSuite, testCase) {
