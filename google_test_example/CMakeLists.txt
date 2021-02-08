@@ -22,5 +22,11 @@ target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
 )
 
-catkin_add_gtest(talker_test test/test.cpp)
-target_link_libraries(talker_test ${catkin_LIBRARIES})
+catkin_add_gtest(google_test_tests
+  test/test.cpp
+  test/talker_test.cpp
+)
+
+target_link_libraries(google_test_tests talker
+  gmock #This is reqired for the mock
+)
