@@ -7,6 +7,4 @@
 
 #include "virtual_talker.hpp"
 
-std_msgs::String getStringMessage();
-
 #endif // VIRTUAL_TALKER_MAIN_H
