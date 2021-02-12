@@ -8,7 +8,7 @@ int main(int argc, char **argv)
   ros::Publisher talker_publisher = nodehandle.advertise<std_msgs::String>("talker", 1000);
   ros::Rate loop_rate(10);
 
-  auto talker = std::make_shared<NonVirtualTalker<ros::Publisher>>();
+  auto talker = std::make_shared<NonVirtual::Talker<ros::Publisher>>();
   talker->setPublisher(&talker_publisher);
 
   auto messageProvider = std::make_shared<MessageProvider>();
