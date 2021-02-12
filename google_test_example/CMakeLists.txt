@@ -13,20 +13,34 @@ include_directories(include
   ./include/
 )
 
-add_library(talker src/talker.cpp)
-target_link_libraries(talker ${catkin_LIBRARIES})
+add_library(message_provider src/message_provider.cpp)
+target_link_libraries(message_provider ${catkin_LIBRARIES})
 
-add_executable(${PROJECT_NAME}_node src/main.cpp)
-target_link_libraries(${PROJECT_NAME}_node
-  talker
-  ${catkin_LIBRARIES}
-)
+# create library and executable for non virtual talker
+add_library(non_virtual_talker src/non_virtual_talker.cpp)
+target_link_libraries(non_virtual_talker ${catkin_LIBRARIES})
 
+add_executable(non_virtual_talker_node src/non_virtual_talker_main.cpp)
+target_link_libraries(non_virtual_talker_node non_virtual_talker message_provider ${catkin_LIBRARIES})
+
+# create library and executable for virtual talker
+add_library(virtual_talker src/virtual_talker.cpp src/virtual_publisher.cpp)
+target_link_libraries(virtual_talker ${catkin_LIBRARIES})
+
+add_executable(virtual_talker_node src/virtual_talker_main.cpp)
+target_link_libraries(virtual_talker_node virtual_talker message_provider ${catkin_LIBRARIES})
+
+# add gtests
 catkin_add_gtest(google_test_tests
   test/test.cpp
-  test/talker_test.cpp
+  test/test_non_virtual_talker.cpp
+  test/test_virtual_talker.cpp
 )
 
-target_link_libraries(google_test_tests talker
-  gmock
+# link libraries to gtests
+target_link_libraries(google_test_tests
+  non_virtual_talker
+  virtual_talker
+  # gmock is only reqired if the mocks are created
+  gmock 
 )
