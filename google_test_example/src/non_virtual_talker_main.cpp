@@ -1,5 +1,8 @@
-#include "non_virtual_talker_main.hpp"
-#include "message_provider.hpp"
+// Copyright 2021 Eugen Kaltenegger
+
+#include <memory>
+#include "../include/non_virtual_talker_main.h"
+#include "../include/message_provider.h"
 
 int main(int argc, char **argv)
 {

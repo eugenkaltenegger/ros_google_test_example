@@ -1,6 +1,9 @@
-#include "message_provider.hpp"
+// Copyright 2021 Eugen Kaltenegger
 
-std_msgs::String MessageProvider::getStringMessage() {
+#include "../include/message_provider.h"
+
+std_msgs::String MessageProvider::getStringMessage()
+{
   std_msgs::String message;
 
   std::stringstream string_stream;

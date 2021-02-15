@@ -1,7 +1,10 @@
+// Copyright 2021 Eugen Kaltenegger
+
 #include <gtest/gtest.h>
 #include <ros/ros.h>
 
-int main(int argc, char **argv){
+int main(int argc, char **argv)
+{
   testing::InitGoogleTest(&argc, argv);
   ros::init(argc, argv, "tester");
   ros::NodeHandle nodehandle;

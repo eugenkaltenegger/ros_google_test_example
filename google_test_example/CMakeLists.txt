@@ -4,6 +4,7 @@ project(google_test_example)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  roslint
 )
 
 catkin_package()
@@ -12,6 +13,9 @@ include_directories(include
   ${catkin_INCLUDE_DIRS}
   ./include/
 )
+
+# invoke lintery
+roslint_cpp()
 
 add_library(message_provider src/message_provider.cpp)
 target_link_libraries(message_provider ${catkin_LIBRARIES})
