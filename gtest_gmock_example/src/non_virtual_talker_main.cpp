@@ -1,8 +1,8 @@
 // Copyright 2021 Eugen Kaltenegger
 
 #include <memory>
-#include "../include/non_virtual_talker_main.h"
-#include "../include/message_provider.h"
+#include "../include/gtest_gmock_example/non_virtual_talker_main.h"
+#include "../include/gtest_gmock_example/message_provider.h"
 
 int main(int argc, char **argv)
 {

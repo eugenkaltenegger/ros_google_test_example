@@ -1,6 +1,6 @@
 // Copyright 2021 Eugen Kaltenegger
 
-#include "../include/virtual_talker.h"
+#include "../include/gtest_gmock_example/virtual_talker.h"
 
 void Virtual::Talker::setPublisher(Virtual::Publisher* virtual_publisher)
 {

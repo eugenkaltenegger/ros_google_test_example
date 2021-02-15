@@ -1,6 +1,6 @@
 // Copyright 2021 Eugen Kaltenegger
 
-#include "../include/message_provider.h"
+#include "../include/gtest_gmock_example/message_provider.h"
 
 std_msgs::String MessageProvider::getStringMessage()
 {

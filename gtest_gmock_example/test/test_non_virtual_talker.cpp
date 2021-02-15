@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include <memory>
-#include "../include/non_virtual_talker.h"
+#include "../include/gtest_gmock_example/non_virtual_talker.h"
 
 namespace NonVirtual
 {

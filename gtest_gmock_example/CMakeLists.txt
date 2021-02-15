@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(google_test_example)
+project(gtest_gmock_example)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp

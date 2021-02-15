@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>google_test_example</name>
+  <name>gtest_gmock_example</name>
   <version>0.0.0</version>
   <description>Example to showcase the usage of gtest and gmock with ROS</description>
 
