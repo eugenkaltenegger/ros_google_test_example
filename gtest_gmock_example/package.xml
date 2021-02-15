@@ -2,7 +2,7 @@
 <package format="2">
   <name>gtest_gmock_example</name>
   <version>0.0.0</version>
-  <description>Example to showcase the usage of gtest and gmock with ROS</description>
+  <description>Example to showcase the usage of gtest and gmock with ROS.</description>
 
   <maintainer email="eugen.kaltenegger@gmail.com">Eugen Kaltenegger</maintainer>
 
