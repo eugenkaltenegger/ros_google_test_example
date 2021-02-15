@@ -1,4 +1,5 @@
 .vscode/
+.idea/
 
 # based on: https://github.com/github/gitignore/blob/master/ROS.gitignore
 
