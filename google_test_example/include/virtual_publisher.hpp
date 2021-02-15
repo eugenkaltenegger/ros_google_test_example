@@ -6,17 +6,17 @@
 
 namespace Virtual {
 
-    class Publisher : public ros::Publisher {
-            
-        private: 
-            ros::Publisher* publisher_pointer;
+class Publisher : public ros::Publisher {
 
-        public:
-            void setPublisher(ros::Publisher*);
-            virtual void publish(const std_msgs::String&) const;
+private:
+  ros::Publisher *publisher_pointer;
 
-    };
-    
+public:
+  void setPublisher(ros::Publisher *);
+  virtual void publish(const std_msgs::String &) const;
+
+};
+
 }
 
 #endif // VIRTUAL_PUBLISHER_H

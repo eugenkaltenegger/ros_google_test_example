@@ -5,11 +5,11 @@
 
 class MessageProvider {
 
-    private:
-        int messageCount = 0;
+private:
+  int messageCount = 0;
 
-    public:
-        std_msgs::String getStringMessage();
+public:
+  std_msgs::String getStringMessage();
 
 };
 

@@ -1,13 +1,13 @@
 #include "message_provider.hpp"
 
 std_msgs::String MessageProvider::getStringMessage() {
-    std_msgs::String message;
-    
-    std::stringstream string_stream;
-    string_stream << "I have told you to write tests " << this->messageCount << " times!";
-    message.data = string_stream.str();
+  std_msgs::String message;
 
-    this->messageCount++;
+  std::stringstream string_stream;
+  string_stream << "I have told you to write tests " << this->messageCount << " times!";
+  message.data = string_stream.str();
 
-    return message;
+  this->messageCount++;
+
+  return message;
 }

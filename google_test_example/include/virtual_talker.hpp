@@ -7,16 +7,16 @@
 
 namespace Virtual {
 
-    class Talker {
+class Talker {
 
-        private:
-            Virtual::Publisher* virtual_publisher = nullptr;
+private:
+  Virtual::Publisher* virtual_publisher = nullptr;
 
-        public:
-            void setPublisher(Virtual::Publisher* virtual_publisher);
-            virtual void publish(const std_msgs::String& message) const;
+public:
+  void setPublisher(Virtual::Publisher* virtual_publisher);
+  virtual void publish(const std_msgs::String& message) const;
 
-    };
+};
 
 }
 #endif // VIRTUAL_TALKER_H

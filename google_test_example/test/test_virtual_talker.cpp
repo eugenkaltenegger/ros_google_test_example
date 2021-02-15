@@ -4,10 +4,10 @@
 #include "virtual_publisher.hpp"
 
 namespace Virtual {
-    class MockPublisher : public Publisher {
-        public:
-            MOCK_METHOD(void, publish, (const std_msgs::String&), (const, override));
-    };
+class MockPublisher : public Publisher {
+public:
+    MOCK_METHOD(void, publish, (const std_msgs::String&), (const, override));
+};
 }
 
 TEST(VirtualTalkerTest, verifyPublisherCall) {
