@@ -7,16 +7,16 @@
 #include <std_msgs/String.h>
 #include "./virtual_publisher.h"
 
-namespace Virtual
+namespace virtually
 {
 class Talker
 {
 private:
-  Virtual::Publisher* virtual_publisher = nullptr;
+  virtually::Publisher* virtual_publisher = nullptr;
 
 public:
-  void setPublisher(Virtual::Publisher* virtual_publisher);
+  void setPublisher(virtually::Publisher* virtual_publisher);
   virtual void publish(const std_msgs::String& message) const;
 };
-}  // namespace Virtual
+}  // namespace virtually
 #endif  // VIRTUAL_TALKER_H

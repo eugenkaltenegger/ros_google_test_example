@@ -11,13 +11,13 @@ int main(int argc, char **argv)
   ros::Publisher talker_publisher = nodehandle.advertise<std_msgs::String>("talker", 1000);
   ros::Rate loop_rate(10);
 
-  auto publisher_wrapper = std::make_shared<Virtual::Publisher>();
+  auto publisher_wrapper = std::make_shared<virtually::Publisher>();
   publisher_wrapper->setPublisher(&talker_publisher);
 
-  auto talker = std::make_shared<Virtual::Talker>();
+  auto talker = std::make_shared<virtually::Talker>();
   talker->setPublisher(publisher_wrapper.get());
 
-  auto messageProvider = std::make_shared<MessageProvider>();
+  auto messageProvider = std::make_shared<message_provider>();
 
   while (ros::ok())
   {

@@ -5,7 +5,7 @@
 #include <memory>
 #include "../include/gtest_gmock_example/virtual_talker.h"
 
-namespace Virtual
+namespace virtually
 {
 class MockPublisher : public Publisher
 {
@@ -16,8 +16,8 @@ public:
 
 TEST(VirtualTalkerTest, verifyPublisherCall)
 {
-    auto mockPublisher = std::make_shared<Virtual::MockPublisher>();
-    auto talker = std::make_shared<Virtual::Talker>();
+    auto mockPublisher = std::make_shared<virtually::MockPublisher>();
+    auto talker = std::make_shared<virtually::Talker>();
     talker->setPublisher(mockPublisher.get());
 
     EXPECT_CALL(*mockPublisher.get(), publish(testing::_)).Times(1);

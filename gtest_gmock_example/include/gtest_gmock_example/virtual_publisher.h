@@ -6,7 +6,7 @@
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 
-namespace Virtual
+namespace virtually
 {
 class Publisher : public ros::Publisher
 {
@@ -17,6 +17,6 @@ public:
   void setPublisher(ros::Publisher *);
   virtual void publish(const std_msgs::String &) const;
 };
-}  // namespace Virtual
+}  // namespace virtually
 
 #endif  // VIRTUAL_PUBLISHER_H

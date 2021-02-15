@@ -5,7 +5,7 @@
 
 #include <std_msgs/String.h>
 
-class MessageProvider
+class message_provider
 {
 private:
   int messageCount = 0;

@@ -5,7 +5,7 @@
 #include <memory>
 #include "../include/gtest_gmock_example/non_virtual_talker.h"
 
-namespace NonVirtual
+namespace non_virtually
 {
 class MockPublisher
 {
@@ -16,8 +16,8 @@ public:
 
 TEST(NonVirtualTalkerTest, verifyPublisherCall)
 {
-  auto mockPublisher = std::make_shared<NonVirtual::MockPublisher>();
-  auto talker = std::make_shared<NonVirtual::Talker<NonVirtual::MockPublisher>>();
+  auto mockPublisher = std::make_shared<non_virtually::MockPublisher>();
+  auto talker = std::make_shared<non_virtually::Talker<non_virtually::MockPublisher>>();
   talker->setPublisher(mockPublisher.get());
 
   EXPECT_CALL(*mockPublisher.get(), publish(testing::_)).Times(1);

@@ -2,12 +2,12 @@
 
 #include "../include/gtest_gmock_example/virtual_talker.h"
 
-void Virtual::Talker::setPublisher(Virtual::Publisher* virtual_publisher)
+void virtually::Talker::setPublisher(virtually::Publisher* virtual_publisher)
 {
   this->virtual_publisher = virtual_publisher;
 }
 
-void Virtual::Talker::publish(const std_msgs::String& message) const
+void virtually::Talker::publish(const std_msgs::String& message) const
 {
   ROS_DEBUG("virtual publish function is invoked");
   this->virtual_publisher->publish(message);

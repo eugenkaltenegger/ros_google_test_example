@@ -45,10 +45,10 @@ Nevertheless it is possible to mock the functionality of non-virtual functions.
 
 A test including a mock can verify that the mock was called as expected.
 
-#### Virtual Functions
+#### virtually Functions
 A class with a virtual function could look like this:
 ``` c++
-namespace Virtual {
+namespace virtually {
   class Publisher : public ros::Publisher {
           
   private: 
@@ -64,7 +64,7 @@ This is a wrapper class for the ros publisher shadowing the publish function wit
 
 A mock for this class could look like this:
 ``` c++
-namespace Virtual {
+namespace virtually {
   class MockPublisher : public ros::Publisher {
     public:
       MOCK_METHOD(void, publish, (std_msgs::String&), (const, override));
@@ -76,8 +76,8 @@ Notice that the mock does not have to overwrite all functions.
 A test for such a mock could look like this:
 ``` c++
 TEST(VirtualTalkerTest, verifyPublisherCall) {
-  auto mockPublisher = std::make_shared<Virtual::MockPublisher>();
-  auto talker = std::make_shared<Virtual::Talker>();
+  auto mockPublisher = std::make_shared<virtually::MockPublisher>();
+  auto talker = std::make_shared<virtually::Talker>();
   talker->setPublisher(mockPublisher.get());
 
   EXPECT_CALL(*mockPublisher.get(), publish(testing::_)).Times(1);
@@ -87,7 +87,7 @@ TEST(VirtualTalkerTest, verifyPublisherCall) {
 ```
 Notice that the arguments for the call are specified with `testing::_` which matched any call.
 
-#### Non-Virtual Functions
+#### Non-virtually Functions
 The publisher as defined in ros has no virtual functions.
 
 To verify calls on the publisher the class using the publisher can be a templated class.
@@ -96,7 +96,7 @@ The mock class can be passed to the templated class.
 
 The templated class could look like this:
 ``` c++
-namespace NonVirtual { ;
+namespace non_virtually { ;
   template<typename T>
   class Talker {
 
@@ -119,7 +119,7 @@ namespace NonVirtual { ;
 
 A mock for such a class could look like this:
 ``` c++
-namespace NonVirtual {
+namespace non_virtually {
     class MockPublisher {
         public:
             MOCK_METHOD(void, publish, (const std_msgs::String&), (const));
@@ -130,8 +130,8 @@ namespace NonVirtual {
 A test for such a mock could look like this:
 ``` c++
 TEST(NonVirtualTalkerTest, verifyPublisherCall) {
-    auto mockPublisher = std::make_shared<NonVirtual::MockPublisher>();
-    auto talker = std::make_shared<NonVirtual::Talker<NonVirtual::MockPublisher>>();
+    auto mockPublisher = std::make_shared<non_virtually::MockPublisher>();
+    auto talker = std::make_shared<non_virtually::Talker<non_virtually::MockPublisher>>();
     talker->setPublisher(mockPublisher.get());
     
     EXPECT_CALL(*mockPublisher.get(), publish(testing::_)).Times(1);

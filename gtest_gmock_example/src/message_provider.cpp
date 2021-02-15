@@ -2,7 +2,7 @@
 
 #include "../include/gtest_gmock_example/message_provider.h"
 
-std_msgs::String MessageProvider::getStringMessage()
+std_msgs::String message_provider::getStringMessage()
 {
   std_msgs::String message;
 

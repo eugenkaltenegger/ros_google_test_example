@@ -6,7 +6,7 @@
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 
-namespace NonVirtual
+namespace non_virtually
 {
 template<typename T>
 class Talker
@@ -26,6 +26,6 @@ public:
     this->publisher_pointer->publish(message);
   };
 };
-}  // namespace NonVirtual
+}  // namespace non_virtually
 
 #endif  // NON_VIRTUAL_TALKER_H
