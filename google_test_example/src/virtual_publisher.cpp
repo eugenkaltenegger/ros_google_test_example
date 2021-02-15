@@ -11,3 +11,4 @@ void Virtual::Publisher::publish(const std_msgs::String& message) const
 {
   this->publisher_pointer->publish(message);
 }
+

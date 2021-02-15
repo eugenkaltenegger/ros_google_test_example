@@ -7,8 +7,6 @@ Test cases are executed in the root directory of the workspace with:
 catkin_make run_tests
 ```
 
----
-
 ## Testing
 
 Files containing the test cases should be located at `<package_root>/test`.
@@ -142,8 +140,6 @@ TEST(NonVirtualTalkerTest, verifyPublisherCall) {
 }
 ```
 A more detailed documentation for mocks is provided [here](https://github.com/google/googletest/blob/master/googlemock/README.md).
-
----
 
 ## Configuration
 The `CMakeLists.txt` needs to be extended:
