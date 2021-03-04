@@ -14,7 +14,7 @@ include_directories(include
   ./include/
 )
 
-# invoke lintery
+# invoke linter
 roslint_cpp()
 
 add_library(message_provider src/message_provider.cpp)
